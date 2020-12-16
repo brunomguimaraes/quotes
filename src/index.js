@@ -1,17 +1,17 @@
 const stripQuotes = (string, options = {
   keepApostropheWords: false,
   quotesToKeep: [],
-  apostrophesToKeep: []
+  apostrophesToRemove: []
 }) => {
   // smartQuotes list ref: https://unicode-table.com/en/sets/quotation-marks/
   const defaultQuotes = ['«','‹','»','›','„','“','‟','”','’','"','❝','❞','❮','❯','〝','〞','〟','＂','‚','‘','‛','❛','❜','"', "'", '`'];
   const defaultApostrophes = [`‘`,`‛`,`❛`,`❜`,`'`,`’`];
-  const { keepApostropheWords, quotesToKeep, apostrophesToKeep } = options;
+  const { keepApostropheWords, quotesToKeep, apostrophesToRemove } = options;
 
   // checks if there are any quotes user want to keep
   let quotes = quotesToKeep ? defaultQuotes.filter(quote => ( !quotesToKeep.includes(quote))) :
     defaultQuotes;
-  let apostrophes = apostrophesToKeep ? defaultApostrophes.filter(apostrophe => ( !apostrophesToKeep.includes(apostrophe))) :
+  let apostrophes = apostrophesToRemove ? defaultApostrophes.filter(apostrophe => ( !apostrophesToRemove.includes(apostrophe))) :
   defaultApostrophes;
 
   // checks if keep apostrophe words(smart single quote or no) between ASCII letters 
