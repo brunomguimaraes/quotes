@@ -1,3 +1,3 @@
 # quotes
 strip quotes
-![tests](https://i.imgur.com/wHpkon1.png)
+![tests](https://i.imgur.com/XJItfXJ.png)
